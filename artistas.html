@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artistas - JPC Films</title>
+    <link rel="icon" href="JPCEntertaiment.png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #4A90E2;
+            color: #fff;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        header::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(to right, #e74c3c, #3498db);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #4A90E2;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .artist {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .artist-card {
+            flex: 1 1 calc(25% - 2rem);
+            background: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .artist-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .artist-img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .artist-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4A90E2;
+            margin-bottom: 0.5rem;
+        }
+        .artist-description {
+            color: #555;
+            line-height: 1.6;
+        }
+        footer {
+            background: #4A90E2;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+        }
+        footer p {
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .artist-card {
+                flex: 1 1 calc(50% - 2rem);
+            }
+        }
+        @media (max-width: 576px) {
+            .artist-card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>JPC Entertainment</h1>
+    </header>
+    <nav>
+        <a href="index.html">Página Principal</a>
+        <a href="artistas.html">Artistas</a>
+        <a href="acerca de.html">Acerca de</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="act y nov.html">Actualizaciones y Novedades</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="container">
+        <section id="artistas">
+            <h2>Nuestros Artistas</h2>
+            <div class="artist">
+                <div class="artist-card">
+                    <img src="Chino Sánchez.jpg" alt="Chino Sánchez" class="artist-img">
+                    <h3 class="artist-name">Chino Sanchéz</h3>
+                    <p class="artist-description">Javier Alejandro Benavides Davila​, conocido como Chino Sánchez, o el Rey del Corrido, es un cantante y compositor mexicano.​ Se especializó en los géneros de corrido y ranchera. </p>
+                </div>
+                <div class="artist-card">
+                    <img src="Brandon chifu.jpg" alt="Brandon chifu" class="artist-img">
+                    <h3 class="artist-name">el chifu</h3>
+                    <p class="artist-description">Branon Maldonado Montano, más conocido por su nombre artístico "chifu", es un rapero, compositor y productor chino. Es conocido localmente por sus videos humorísticos y actuaciones, e internacionalmente es conocido por sus videos onde' le bailan</p>
+                </div>
+                <div class="artist-card">
+                    <img src="william que cerveza.jpg" alt="William" class="artist-img">
+                    <h3 class="artist-name">el bellako</h3>
+                    <p class="artist-description">William Omar Reyes Flores, mejor conocido como el que mato a Saul, es un compositor de música clasica y armonica. Es conocido por todos por el video "Que cerveza prefieres"</p>
+                </div>
+                <div class="artist-card">
+                    <img src="Sunwoo.png" alt="Artista 4" class="Sunwoo y Canelo">
+                    <h3 class="artist-name">Xipermine Music Group</h3>
+                    <p class="artist-description">Sunwoo y xZJpcRl son los encargados de crear y producir música del estilo electronica para servidores de Minecraft.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 JPC Family Company Inc. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

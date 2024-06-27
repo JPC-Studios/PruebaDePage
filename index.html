@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JPC Entertainment</title>
+        <link rel="icon" href="JPCEntertaiment.png">
+    </head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #4A90E2;
+            color: #fff;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        header::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(to right, #e74c3c, #3498db);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #4A90E2;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #4A90E2;
+            border-bottom: 3px solid #e74c3c;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .about,
+        .services,
+        .team,
+        .contact,
+        .projects,
+        .testimonials,
+        .events,
+        .gallery {
+            margin-bottom: 3rem;
+        }
+        .services ul,
+        .contact ul,
+        .events .event,
+        .testimonials .testimonial {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .services li,
+        .contact li,
+        .events .event,
+        .testimonials .testimonial {
+            background: #ecf0f1;
+            margin: 0.5rem 0;
+            padding: 1rem;
+            border-left: 5px solid #e74c3c;
+            border-radius: 5px;
+        }
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .team-member {
+            flex: 1 1 calc(33.333% - 1rem);
+            background: linear-gradient(to right, #e74c3c, #3498db);
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .team-member:hover {
+            transform: scale(1.05);
+        }
+        .team-member img {
+            border-radius: 50%;
+            max-width: 100px;
+            margin-bottom: 1rem;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .contact-form button {
+            padding: 0.5rem 2rem;
+            border: none;
+            border-radius: 5px;
+            background: #4A90E2;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .contact-form button:hover {
+            background: #3498db;
+        }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .project {
+            flex: 1 1 calc(33.333% - 1rem);
+            background: #ecf0f1;
+            padding: 1rem;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .project img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .project h3 {
+            margin-top: 0.5rem;
+        }
+        .events {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .events .event {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .events .event:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .events .date {
+            font-weight: bold;
+            color: #4A90E2;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .gallery img {
+            width: calc(33.333% - 1rem);
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        footer {
+            background: #4A90E2;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+        }
+        footer p {
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                margin: 0.5rem 0;
+            }
+            .team-member,
+            .project,
+            .gallery img {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+    <body>
+        <header>
+            <h1>JPC Entertainment</h1>
+        </header>
+        <nav>
+            <a href="index.html">Página Principal</a>
+            <a href="artistas.html">Artistas</a>
+            <a href="acerca de.html">Acerca de</a>
+            <a href="proyectos.html">Proyectos</a>
+            <a href="eventos.html">Eventos</a>
+            <a href="act y nov.html">Actualizaciones y Novedades</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+        <div class="container">
+            <section id="about" class="about">
+                <h2>Sobre Nosotros</h2>
+                <p>En JPC Studios, hacemos que tu música brille. Desde la composición hasta la distribución, nuestro equipo de profesionales se asegura de que tus canciones lleguen a nuevas alturas con calidad excepcional y distribución digital eficiente.</p>
+            </section>
+            <section id="services" class="services">
+                <h2>¿Qué hacemos?</h2>
+                <ul>
+                    <li>Producción y Composición de Música</li>
+                    <li>Produccion de Material Audiovisual</li>
+                    <li>Reclutamiento de nuevos artistas</li>
+                    <li>Distribución en Plataformas Digitales</li>
+                </ul>
+            </section>
+            <section id="team">
+                <h2>CEO y CO-CEO de JPC Entertainment</h2>
+                <div class="team">
+                    <div class="team-member">
+                        <img src="Jaime Peña C..jpg" alt="Nombre del Miembro">
+                        <h3>Jaime Peña C.</h3>
+                        <p>Co-Fundador y CEO</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="gato de alee.jpg" alt="Nombre del Miembro">
+                        <h3>Alexia "Sunwoo"</h3>
+                        <p>CEO</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="brandon vaquero.jpg" alt="Nombre del Miembro">
+                        <h3>Brandon Maldonado M. "el chifu"</h3>
+                        <p>CO-CEO</p>
+                    </div>
+                </div>
+            </section>
+            <section id="projects" class="projects">
+                <h2>Proyecto más reciente</h2>
+                <div class="projects">
+                    <div class="project">
+                        <img src="Img.jpg5" alt="Proyecto 1">
+                        <h3>Proyecto más reciente: "Pre Debut de JotaJotaPe"</h3>
+                        <p>Estamos trabajando en el proximo debut del Rapero y cantautor de NarcoCorridos. Actualmente estamos produciendo su primer albúm del artista proximo a debutar este proximo 27 de Septiembre del 2024 con algunos de los temas llamados "No Pienso Parar", "Amor a Distancia", "Tan Cerca Pero A La Vez Tan Lejos", "Rap a Mi Manera" y por último el corrido llamado "P*tas De Mi Vecindario" en colaboración con StereoMusic y Joytime Productions.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="events" class="events">
+                <h2>Próximos Eventos</h2>
+                <div class="events">
+                    <div class="event">
+                        <h3>Presentación de un nuevo artista y lanzamiento de su primer albúm</h3>
+                        <p class="date">Fecha: 27 de Septiembre, 2024</p>
+                        <p>Lugar: En algún lugar de Saltillo, Coah.</p>
+                        <p>Descripción: Este día se presentará al nuevo artista que viene a revolucionar el mundo de la música.</p>
+                    </div>
+                    <div class="event">
+                        <h3>Presentación en Vivo de "Santa SDP"</h3>
+                        <p class="date">Fecha: 23 de Julio, 2024</p>
+                        <p>Lugar: Teatro Nazas</p>
+                        <p>Descripción: Se dará la presentación del artista Santa SDP, después de 8 meses de inactividad</p>
+                    </div>
+                    <div class="event">
+                        <h3>Presentaciones para seleccionar a un nuevo artista bajo el sello de JPC Entertainment</h3>
+                        <p class="date">Fecha: 30 de Agosto, 2024</p>
+                        <p>Lugar: Teatro Nazas</p>
+                        <p>Descripción: Todo aquel que tenga un don para el canto, es bienvenido a presentarse y demostrar su taleto. ¿Quizá seas el siguiente en debutar?</p>
+                    </div>
+                </div>
+            </section>
+            <section id="testimonials" class="testimonials">
+                <h2>Actualizaciones y Novedades</h2>
+                <div class="testimonials">
+                    <div class="testimonial">
+                        <p>Se espera un proximo debut de un nuevo artista. Uyy de quíen tratará...</p>
+                        <p><strong>- Jaime Peña C. CEO</strong></p>
+                        <p><strong>01 de Junio del 2024</strong></p>
+                    </div>
+                    <div class="testimonial">
+                        <p>Debido a algunos inconvenientes con UMG, algunas de las canciones de nuestros artistas serán dadas de baja de las plataformas de streaming.</p>
+                        <p><strong>- Diego Cardenas "Synnerr". CO-CEO</strong></p>
+                        <p><strong>11 de Mayo del 2024</strong></p>
+                    </div>
+                    <div class="testimonial">
+                        <p>Se ha incorporado a la empresa una nueva CEO que junto a Jaime Peña C. CEO Principal tomarán las decisiones en conjunto para el futuro de la empresa.</p>
+                        <p><strong>- Mesa Directiva de JPC Entertainment</strong></p>
+                        <p><strong>25 de Febrero del 2025</strong></p>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="contact">
+                <h2>Contacto</h2>
+                <p>¿Interesado en trabajar con nosotros? Contáctanos a través de los siguientes medios:</p>
+                <ul>
+                    <li>Email: Entertainment@JPC.com</li>
+                    <li>Teléfono: +52 (871) 568 2668</li>
+                    <li>Dirección: Calle: Melchor Muzquíz No. 440 Sur</li>
+                </ul>
+                <div class="contact-form">
+                    <form action="/enviar-correo" method="POST">
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                        <br><br>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <br><br>
+                        <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+                        <br><br>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <footer>
+            <p>&copy; 2024 JPC Family Company Inc. Todos los derechos reservados.</p>
+        </footer>
+    </body>
+</html>
